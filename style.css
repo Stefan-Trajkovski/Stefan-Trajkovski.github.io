@@ -144,7 +144,7 @@ margin-bottom:15px;
     padding: 40px;
     }
     .about{
-        margin-bottom:50p;
+        margin-bottom:50px;
     }
 .about:last-child{
     margin-bottom:0;
@@ -211,50 +211,102 @@ font-weight: 600;
     background: #03a9f4;
 
 }
-   .interest ul{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
 
-   }
-   .interest ul li{
-    list-style:none;
-    color:#333;
+
+.about.interest {
+    display: grid;
+    width: 100%;
+    grid-template-areas:
+        ". . hover hover . ."
+        "first first second second third third "
+        " fourth fourth sixth sixth fifth fifth ";
+    gap: 10px; /* Adjust as needed */
+}
+
+
+.first{
+    grid-area: first;
+}
+.second{
+    grid-area: second;
+}
+.third{
+    grid-area: third;
+}
+.fourth{
+    grid-area: fourth;
+}
+.fifth{
+    grid-area: fifth;
+}
+.hover{
+    grid-area:hover;
+}
+.sixth{
+    grid-area:sixth;
+}
+
+.about.interest > div {
+    color: green;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
+.about.interest .project {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 2px solid #003147;
+    border-radius: 8px;
     font-weight: 500;
-    margin:10px 0 ;
-   }
+    transition: background-color 0.3s, color 0.3s;
+}
 
-   .interest ul li .fa{
-    color:#03a9f4;
-    font-size:18px;
-    width:20px;
+.about.interest .project:hover {
+    background-color: #003147;
+    color: #fff;
+    text-decoration: none;
+}
 
-   }
+.about.interest .project a {
+    color: #003147;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-   @media(max-width:1000px) {
+.about.interest .project:hover a {
+    color: #fff;
+}
+@media (min-width: 601px) and (max-width: 1000px) {
     .container{
         margin:10px;
         grid-template-columns: repeat(1,1fr);
     }
-    .interest ul{
-        grid-template-columns: repeat(2,1fr);
-    }
-   }
+    .about.interest {
 
-   @media(max-width:600px) {
+        grid-template-areas:
+            "  hover hover . . "
+            "first first second second "
+            " third third fourth fourth"
+             "sixth sixth fifth fifth ";
+    }
+  
     
-    .about .box{
-        flex-direction: column;
-     
-    }   
-    .about .box .year_company{
-        margin-bottom: 5px;
-
-    }
-    .interest ul{
-        grid-template-columns: repeat(1,1fr);
-
-    }
-    .skills .box{
-        grid-template-columns: repeat(1,1fr);
-    }
    }
+
+   @media (max-width: 600px) {
+  
+    .about .box {
+      flex-direction: column;
+    }
+  
+    .about .box .year_company {
+      margin-bottom: 5px;
+    }
+  
+    .skills .box {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
