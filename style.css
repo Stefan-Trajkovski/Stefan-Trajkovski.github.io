@@ -245,6 +245,9 @@ font-weight: 600;
 .sixth{
     grid-area:sixth;
 }
+.seventh{
+    grid-area:seventh;
+}
 
 .about.interest > div {
     color: green;
@@ -290,7 +293,8 @@ a{
             "  hover hover . . "
             "first first second second "
             " third third fourth fourth"
-             "sixth sixth fifth fifth ";
+             "sixth sixth fifth fifth "
+            "seventh seventh";
     }
   
     
